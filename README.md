@@ -3,10 +3,10 @@ A fish script for proxy setting
 
 ## Usage
 1. enable proxy.
-···bash
+```bash
    fish proxy.fish set
 ```
 3. diasble proxy
-···bash
+```bash
    fish proxy.fish unset
 ```
