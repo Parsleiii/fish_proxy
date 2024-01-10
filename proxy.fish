@@ -6,7 +6,7 @@ set wslip (hostname -I | awk '{print $1}')
 set port __YOUR_PORT
 
 # Complete with your proxy settings
-set PROXY_HTTP "http://@$hostip:$port"
+set PROXY_HTTP "http://$hostip:$port"
 # set PROXY_HTTP "http://user:password@$hostip:$port"
 
 function set_proxy
@@ -19,6 +19,7 @@ function set_proxy
 	set -Ux ftp_proxy $PROXY_HTTP
 	set -Ux http_proxy $PROXY_HTTP
 	set -Ux https_proxy $PROXY_HTTP
+	echo "Success !"
 end
 
 function unset_proxy
@@ -30,6 +31,7 @@ function unset_proxy
 	set -e ftp_proxy
 	set -e http_proxy
 	set -e https_proxy
+	echo "Unset done."
 end
 
 if test -z "$argv[1]"
